@@ -2,6 +2,8 @@
 # Capstone Project
 ### My capstone project in the Statistics with R specialization in Coursera
 
+[<img src="https://coursera-course-photos.s3.amazonaws.com/bb/dac0c0f81711e5b1f52f7ce5c8ca33/composite.v2a.png">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
+
 #### Course Description
 
 This repository contains my capstone project submitted through GitHub for the course Statistics with R specialization in Coursera. The Capstone course is the last course in the [Statistics with R Specialization]("https://www.coursera.org/specializations/statistics"). This course puts the skills the learner has acquired and the methods he's learned in the previous courses into a thorough data analysis project using real data to answer a concrete business problem.
