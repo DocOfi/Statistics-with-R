@@ -3,7 +3,7 @@
 ### My course project in the Introduction to Probability and Data  Course in Coursera
 
 
-![Alt text]("https://coursera-course-photos.s3.amazonaws.com/6f/84dd00f4e311e5b1964b8e2cbb6cfc/intro_to_data_and_probability.png")
+[<img src="https://coursera-course-photos.s3.amazonaws.com/6f/84dd00f4e311e5b1964b8e2cbb6cfc/intro_to_data_and_probability.png">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
 
 
 #### Course Description
