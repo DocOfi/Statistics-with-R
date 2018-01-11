@@ -2,9 +2,13 @@
 # Introduction to Probability and Data 
 ### My course project in the Introduction to Probability and Data  Course in Coursera
 
+```r
+knitr::include_graphics("https://coursera-course-photos.s3.amazonaws.com/6f/84dd00f4e311e5b1964b8e2cbb6cfc/intro_to_data_and_probability.png")
+```
+
 #### Course Description
 
-This repository contains my course project submitted through GitHub for the course Introduction to Probability and Data in Coursera.Introduction to Probability and Data is course 1 of 5 in the [Statistics with R Specialization]("https://www.coursera.org/specializations/statistics"). This course introduces the learner to sampling and exploring data, as well as basic probability theory. The learner will examine various types of sampling methods and discuss how such methods can impact the utility of a data analysis. The concepts in this module will serve as building blocks for our later courses.
+This repository contains my course project submitted through GitHub for the course Introduction to Probability and Data in Coursera. Introduction to Probability and Data is course 1 of 5 in the [Statistics with R Specialization]("https://www.coursera.org/specializations/statistics"). This course introduces the learner to sampling and exploring data, as well as basic probability theory. The learner will examine various types of sampling methods and discuss how such methods can impact the utility of a data analysis. The concepts in this module will serve as building blocks for our later courses.
 
 # Introduction
 
