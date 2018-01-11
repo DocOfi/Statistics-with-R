@@ -2,6 +2,8 @@
 # Linear Regression and Modeling
 ### My course project in the Linear Regression and Modeling Course in Coursera
 
+[<img src="https://coursera-course-photos.s3.amazonaws.com/31/f472a0f4e511e5bd5a676c192d8462/modeling_and_linear_regression.png">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
+
 #### Course Description
 
 This repository contains my course project submitted through GitHub for the course Linear Regression and Modeling in Coursera. Linear Regression and Modeling is course 3 of 5 in the [Statistics with R Specialization]("https://www.coursera.org/specializations/statistics"). 
