@@ -2,7 +2,7 @@
 
 This repository contains my course project submitted through GitHub for the course Introduction to Inferential Statistics in Coursera. Introduction to Inferential Statistics is course 2 of 5 in the [Statistics with R Specialization]("https://www.coursera.org/specializations/statistics").
 
-[<img src="https://coursera-course-photos.s3.amazonaws.com/43/a73740f50211e5bdadff07ec868da4/statistical_inference.v2a.png" width="150" height="100" align="center">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
+[<img src="https://coursera-course-photos.s3.amazonaws.com/43/a73740f50211e5bdadff07ec868da4/statistical_inference.v2a.png" width="150" height="150" align="center">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
 
 ### Course Description
 

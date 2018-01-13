@@ -2,7 +2,7 @@
 
 This folder contains my course project submitted through GitHub for the course Introduction to Probability and Data in Coursera. Introduction to Probability and Data is course 1 of 5 in the [Statistics with R Specialization]("https://www.coursera.org/specializations/statistics").
 
-[<img src="https://coursera-course-photos.s3.amazonaws.com/6f/84dd00f4e311e5b1964b8e2cbb6cfc/intro_to_data_and_probability.png" width="150" height="100" align="center"/>](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
+[<img src="https://coursera-course-photos.s3.amazonaws.com/6f/84dd00f4e311e5b1964b8e2cbb6cfc/intro_to_data_and_probability.png" width="150" height="150" align="center"/>](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
 
 ### Course Description
 

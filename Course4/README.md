@@ -3,7 +3,7 @@
 
 This repository contains my Capstone project submitted through GitHub for the Bayesian Statistics course in the [Statistics with R Specialization]("https://www.coursera.org/specializations/statistics").
 
-[<img src="https://coursera-course-photos.s3.amazonaws.com/65/c558c0f50211e5a52493c7e6aee302/baysian_statistics.v2a.png" width="150" height="100" align="center">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
+[<img src="https://coursera-course-photos.s3.amazonaws.com/65/c558c0f50211e5a52493c7e6aee302/baysian_statistics.v2a.png" width="150" height="150" align="center">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
 
 ### Course Description
 

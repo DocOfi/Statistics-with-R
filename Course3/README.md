@@ -2,7 +2,7 @@
 
 This folder contains my course project submitted through GitHub for the course Linear Regression and Modeling in Coursera.  Linear Regression and Modeling is course 3 of 5 in the [Statistics with R Specialization]("https://www.coursera.org/specializations/statistics").
 
-[<img src="https://coursera-course-photos.s3.amazonaws.com/31/f472a0f4e511e5bd5a676c192d8462/modeling_and_linear_regression.png" width="150" height="100" align="center">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
+[<img src="https://coursera-course-photos.s3.amazonaws.com/31/f472a0f4e511e5bd5a676c192d8462/modeling_and_linear_regression.png" width="150" height="150" align="center">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
 
 ### Course Description
 

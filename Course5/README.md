@@ -2,7 +2,7 @@
 
 This repository contains my Capstone project submitted through GitHub for the Capstone course in the [Statistics with R Specialization]("https://www.coursera.org/specializations/statistics").
 
-[<img src="https://coursera-course-photos.s3.amazonaws.com/bb/dac0c0f81711e5b1f52f7ce5c8ca33/composite.v2a.png" width="150" height="100" align="center">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
+[<img src="https://coursera-course-photos.s3.amazonaws.com/bb/dac0c0f81711e5b1f52f7ce5c8ca33/composite.v2a.png" width="150" height="150" align="center">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
 
 ### Course Description
 
