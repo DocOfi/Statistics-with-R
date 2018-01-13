@@ -30,7 +30,7 @@ The courses are taught by:
 
 From Duke University
 
-[<img src="https://coursera-university-assets.s3.amazonaws.com/6d/3cb3e06c357d40ef60000fb3d12d72/dukesquare_blue.png" width="150" height="100"/>](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
+[<img src="https://coursera-university-assets.s3.amazonaws.com/6d/3cb3e06c357d40ef60000fb3d12d72/dukesquare_blue.png" width="150" height="150"/>](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
 
 ### Content 
 
