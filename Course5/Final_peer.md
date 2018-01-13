@@ -1112,7 +1112,7 @@ Studentized residuals measure discrepancy just like the regular residuals but it
 
 A conceptual formula is:
 ```
-    Influence = Leverage × y-Discrepancy 
+    Influence = Leverage ? y-Discrepancy 
 ```
 - An outlier has extreme y-value (studentized residual). 
 - A high leverage point has extreme x -values (hat values).

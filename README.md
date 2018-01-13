@@ -2,7 +2,10 @@
 
 This Repository contains my projects for the courses under Coursera's [Statistics with R specialization]("https://www.coursera.org/specializations/statistics").
 
-[<img src="https://coursera-course-photos.s3.amazonaws.com/bb/dac0c0f81711e5b1f52f7ce5c8ca33/composite.v2a.png">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
+[<img src="https://about.coursera.org/careers/wp-content/uploads/2017/07/coursera-fb-1.png" width="150" height="100"/>]
+
+[<img src="https://coursera-course-photos.s3.amazonaws.com/bb/dac0c0f81711e5b1f52f7ce5c8ca33/composite.v2a.png" width="150" height="100"/>](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
+
 
 ### Course Description
 
@@ -26,6 +29,8 @@ The courses are taught by:
 - Merlise A Clyde, Professor
 
 From Duke University
+
+[<img src="https://coursera-university-assets.s3.amazonaws.com/6d/3cb3e06c357d40ef60000fb3d12d72/dukesquare_blue.png" width="150" height="100"/>](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
 
 ### Content 
 

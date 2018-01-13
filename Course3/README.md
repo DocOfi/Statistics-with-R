@@ -1,12 +1,12 @@
 ### My course project in the Introduction to Linear Regression and Modeling Course in Coursera
 
-This repository contains my course project submitted through GitHub for the course Linear Regression and Modeling in Coursera.  Linear Regression and Modeling is course 3 of 5 in the [Statistics with R Specialization]("https://www.coursera.org/specializations/statistics").
+This folder contains my course project submitted through GitHub for the course Linear Regression and Modeling in Coursera.  Linear Regression and Modeling is course 3 of 5 in the [Statistics with R Specialization]("https://www.coursera.org/specializations/statistics").
 
-[<img src="https://coursera-course-photos.s3.amazonaws.com/31/f472a0f4e511e5bd5a676c192d8462/modeling_and_linear_regression.png">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
+[<img src="https://coursera-course-photos.s3.amazonaws.com/31/f472a0f4e511e5bd5a676c192d8462/modeling_and_linear_regression.png" width="150" height="100" align="center">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
 
 ### Course Description
 
-**About this course:** This course introduces simple and multiple linear regression models. These models allow you to assess the relationship between variables in a data set and a continuous response variable. Is there a relationship between the physical attractiveness of a professor and their student evaluation scores? Can we predict the test score for a child based on certain characteristics of his or her mother? In this course, you will learn the fundamental theory behind linear regression and, through data examples, learn to fit, examine, and utilize regression models to examine relationships between multiple variables, using the free statistical software R and RStudio.
+**About this course:** This course introduces simple and multiple linear regression models. These models allow you to assess the relationship between variables in a data set and a continuous response variable. Is there a relationship between the physical attractiveness of a professor and their student evaluation scores? Can we predict the test score for a child based on certain characteristics of his or her mother? In this course, you will learn the fundamental theory behind linear regression and, through data examples, learn to fit, examine, and utilize regression models to examine relationships between multiple variables, using the free statistical software R and RStudio. *from* ttps://www.coursera.org/learn/linear-regression-model/
 
 ### Course Project
 
@@ -43,7 +43,3 @@ The movies.html document is the html version of the movies.md markdown document.
 
 The movies_files folder contains other images that are displayed in the movies.md and movies.html documents.
 
-To download the content of this repository as a .zip file, click on the Download ZIP button. If you have a GitHub account, you can fork the content so you'll have a copy on your GitHub account.  
-
-
-3

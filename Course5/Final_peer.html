@@ -921,7 +921,7 @@ sort(boxplot.stats(resid(final_mod_BIC))$out, decreasing = TRUE)</code></pre>
 <li><p>y-discrepancy - This is simply residuals of a different flavor called studentized residuals which can be obtained by using the R function rstudent(). Studentized residuals measure discrepancy just like the regular residuals but it is the residual estimated for <span class="math inline">\(y_i\)</span> without using that observation.</p></li>
 </ul>
 <p>A conceptual formula is:</p>
-<pre><code>    Influence = Leverage × y-Discrepancy </code></pre>
+<pre><code>    Influence = Leverage ? y-Discrepancy </code></pre>
 <ul>
 <li>An outlier has extreme y-value (studentized residual).</li>
 <li>A high leverage point has extreme x -values (hat values).</li>

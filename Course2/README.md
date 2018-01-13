@@ -2,7 +2,7 @@
 
 This repository contains my course project submitted through GitHub for the course Introduction to Inferential Statistics in Coursera. Introduction to Inferential Statistics is course 2 of 5 in the [Statistics with R Specialization]("https://www.coursera.org/specializations/statistics").
 
-[<img src="https://coursera-course-photos.s3.amazonaws.com/43/a73740f50211e5bdadff07ec868da4/statistical_inference.v2a.png">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
+[<img src="https://coursera-course-photos.s3.amazonaws.com/43/a73740f50211e5bdadff07ec868da4/statistical_inference.v2a.png" width="150" height="100" align="center">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
 
 ### Course Description
 
@@ -47,5 +47,5 @@ The improvedProj_files folder contains the images displayed in the improvedProj.
 
 The index1.png and index2.png files are images of plots that are displayed in the README markdown document.
 
-To download the content of this repository as a .zip file, click on the Download ZIP button. If you have a GitHub account, you can fork the content so you'll have a copy on your GitHub account.  
+
 

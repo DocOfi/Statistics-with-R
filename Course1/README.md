@@ -1,12 +1,13 @@
 ### My course project in the Introduction to Probability and Data Course in Coursera
 
-This repository contains my course project submitted through GitHub for the course Introduction to Probability and Data in Coursera. Introduction to Probability and Data is course 1 of 5 in the [Statistics with R Specialization]("https://www.coursera.org/specializations/statistics").
+This folder contains my course project submitted through GitHub for the course Introduction to Probability and Data in Coursera. Introduction to Probability and Data is course 1 of 5 in the [Statistics with R Specialization]("https://www.coursera.org/specializations/statistics").
 
-[<img src="https://coursera-course-photos.s3.amazonaws.com/6f/84dd00f4e311e5b1964b8e2cbb6cfc/intro_to_data_and_probability.png">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
+[<img src="https://coursera-course-photos.s3.amazonaws.com/6f/84dd00f4e311e5b1964b8e2cbb6cfc/intro_to_data_and_probability.png" width="150" height="100" align="center"/>](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
 
 ### Course Description
 
-**About this course:** This course introduces you to sampling and exploring data, as well as basic probability theory and Bayes' rule. You will examine various types of sampling methods, and discuss how such methods can impact the scope of inference. A variety of exploratory data analysis techniques will be covered, including numeric summary statistics and basic data visualization. You will be guided through installing and using R and RStudio (free statistical software), and will use this software for lab exercises and a final project. The concepts and techniques in this course will serve as building blocks for the inference and modeling courses in the Specialization. 
+**About this course:** This course introduces you to sampling and exploring data, as well as basic probability theory and Bayes' rule. You will examine various types of sampling methods, and discuss how such methods can impact the scope of inference. A variety of exploratory data analysis techniques will be covered, including numeric summary statistics and basic data visualization. You will be guided through installing and using R and RStudio (free statistical software), and will use this software for lab exercises and a final project. The concepts and techniques in this course will serve as building blocks for the inference and modeling courses in the Specialization. *from* https://www.coursera.org/learn/probability-intro
+
 
 ### Course project
 
@@ -47,7 +48,5 @@ The intro_data_prob_project.md is a markdown document which contains my project 
 The intro_data_prob_project.html document is the html version of the intro_data_prob_project.md markdown document. You can view the file by clicking on this link [my project in Introduction to Probability and Data](https://htmlpreview.github.io/?https://github.com/DocOfi/Statistics-with-R/Course1/intro_data_prob_project.html).
 
 The intro_data_prob_project_files contain the images that are displayed in the markdown and html versions of my project
-
-To download the content of this repository as a .zip file, click on the Download ZIP button. If you have a GitHub account, you can fork the content so you'll have a copy on your GitHub account.  
 
 

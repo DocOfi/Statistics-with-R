@@ -2,11 +2,11 @@
 
 This repository contains my Capstone project submitted through GitHub for the Capstone course in the [Statistics with R Specialization]("https://www.coursera.org/specializations/statistics").
 
-[<img src="https://coursera-course-photos.s3.amazonaws.com/bb/dac0c0f81711e5b1f52f7ce5c8ca33/composite.v2a.png">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
+[<img src="https://coursera-course-photos.s3.amazonaws.com/bb/dac0c0f81711e5b1f52f7ce5c8ca33/composite.v2a.png" width="150" height="100" align="center">](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
 
 ### Course Description
 
-This course puts the skills the learner has acquired and the methods he's learned in the previous courses into a thorough data analysis project using real data to answer a concrete business problem.
+**About this course:** The capstone project will be an analysis using R that answers a specific scientific/business question provided by the course team. A large and complex dataset will be provided to learners and the analysis will require the application of a variety of methods and techniques introduced in the previous courses, including exploratory data analysis through data visualization and numerical summaries, statistical inference, and modeling as well as interpretations of these results in the context of the data and the research question. The analysis will implement both frequentist and Bayesian techniques and discuss in context of the data how these two approaches are similar and different, and what these differences mean for conclusions that can be drawn from the data. Note: Only learners who have passed the four previous courses in the specialization are eligible to take the Capstone. *from* https://www.coursera.org/learn/statistics-project
 
 ### Course Project
 
@@ -44,6 +44,6 @@ The Final_peer.md is a markdown document which contains my project for this cour
 
 The Final_peer.html document is the html version of the Final_peer.md markdown document. You can view the file by clicking on this link [my capstone project](https://htmlpreview.github.io/?https://github.com/DocOfi/Statistics-with-R/Course5/Final_peer.html).
 
-To download the content of this repository as a .zip file, click on the Download ZIP button. If you have a GitHub account, you can fork the content so you'll have a copy on your GitHub account.  
+ 
 
 
