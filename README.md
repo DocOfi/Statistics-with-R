@@ -2,7 +2,7 @@
 
 This Repository contains my projects for the courses under Coursera's [Statistics with R specialization]("https://www.coursera.org/specializations/statistics").
 
-[<img src="https://about.coursera.org/careers/wp-content/uploads/2017/07/coursera-fb-1.png" width="150" height="100"/>]
+[<img src="https://about.coursera.org/careers/wp-content/uploads/2017/07/coursera-fb-1.png" width="150" height="150"/>]
 
 [<img src="https://coursera-course-photos.s3.amazonaws.com/bb/dac0c0f81711e5b1f52f7ce5c8ca33/composite.v2a.png" width="150" height="150"/>](https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/)
 
