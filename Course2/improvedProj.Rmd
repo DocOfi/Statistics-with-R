@@ -1,0 +1,300 @@
+---
+title: "Education and the GSS data"
+author: "DocOfi"
+date: "October 9, 2016"
+output:
+   html_document:
+    fig_height: 4
+    highlight: pygments
+    theme: spacelab
+    keep_md: true
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(warning=FALSE, message=FALSE)
+```
+
+```{r LoadPack, message = FALSE, echo = FALSE}
+library(ggplot2)
+library(gplots)
+library(dplyr)
+library(statsr)
+```
+
+###Introduction
+
+Since 1972, the General Social Survey (GSS) has been monitoring societal change and studying the growing complexity of American society. The GSS aims to gather data on contemporary American society in order to monitor and explain trends and constants in attitudes, behaviors, and attributes; to examine the structure and functioning of society in general as well as the role played by relevant subgroups; to compare the United States to other societies in order to place American society in comparative perspective and develop cross-national models of human society; and to make high-quality data easily accessible to scholars, students, policy makers, and others, with minimal cost and waiting. [http://www.norc.org/Research/Projects/Pages/general-social-survey.aspx](http://www.norc.org/Research/Projects/Pages/general-social-survey.aspx)
+
+The GSS is an area-probability sample that uses the National Opinion Research Center (NORC) National Sampling Frame for an equal probability multi-stage cluster sample of housing units for the entire United States. The results of the survey can therefore be generalized to the general population. 
+
+We must be mindful however, that a survey is an obsevational study. Causality cannot be inferred as the conditions present does not afford an experimental design that create equal conditions for a control group and an experimental group. 
+
+The data we will be using is an extract of the General Social Survey (GSS) Cumulative File 1972-2012 set aside for the goal of providing a convenient data resource for students learning statistical reasoning using the R language. The data is available for download for students of coursera taking the inferenctial statistics course.
+
+```{r load-data}
+load("gss.RData")
+```
+
+###Research Question 1
+
+Is confidence in educational institutions associated with opinions  regarding Government spending for education? 
+
+Does having the opinion that there is too little spending for education associated with having hardly any confidence in educational institutions?
+
+Cost of educaton has grown exponentially as more attention has been given to other problems like health. When access to good education is restricted, it becomes yet another structure that promotes oppression and inequality in society. This is why the efforts of those behind Coursera is praiseworthy because of the almost quixotic ideals that it fosters and the unbelievable courage it has for taking the challenge of reversing the trend in education not only in the United States but in the whole world. 
+
+I want to know the prevailing opinion regarding spending for education in America and how or if this related to confidence in educational institutions.
+
+```{r pairstat, echo=FALSE, eval=FALSE}
+### For some reason these codes do not produce the output of the codes below it
+
+coneduc <- gss %>% filter(year != "NA", coneduc != "NA", nateduc != "NA") %>% filter(year >=2000) %>% group_by(year,coneduc) %>% summarise(n_coneduc = n()) %>% mutate(total = sum(n_coneduc), perc_conf = n_coneduc/total) %>% mutate(perc_conf = round(perc_conf*100,1)) %>% mutate(category = rep("confidence", 3)) %>% rename(response = coneduc, n = n_coneduc)
+nateduc <- gss %>% filter(year != "NA", nateduc != "NA", coneduc != "NA") %>% filter(year >=2000) %>% group_by(year,nateduc) %>% summarise(n_nateduc = n()) %>% mutate(total = sum(n_nateduc), perc_conf = n_nateduc/total) %>% mutate(perc_conf = round(perc_conf*100,1)) %>% mutate(category = rep("spending", 3))  %>% rename(response = nateduc, n = n_nateduc)
+educ_df <-  rbind(coneduc, nateduc)
+educ_df %>% group_by(category) %>% ggplot(aes(y = perc_conf, x = response, fill = response)) + geom_bar(stat = "identity") + ylab("Percent") + xlab("Response") + ggtitle("Confidence and Spending in Education in 2012") +  scale_fill_hue(name="Response") + facet_wrap( ~ category) + theme(axis.ticks = element_blank(), axis.text.x = element_blank())
+par(mfrow = c(1,2))
+p1
+p2
+```
+
+```{r sumstat, echo=TRUE, fig.width=13}
+by_coneduc <- gss %>% filter(year != "NA", coneduc != "NA", nateduc != "NA") %>% group_by(year,coneduc) %>% summarise(n_coneduc = n())
+byconeduc_year <- gss %>% filter(year != "NA", coneduc != "NA") %>% group_by(year) %>% select(year, coneduc) %>% summarise(total_confid = n())
+merged_coneduc <- merge(byconeduc_year, by_coneduc) %>% filter(year >= 2000) %>% group_by(coneduc) %>% summarise(n = sum(n_coneduc)) %>% mutate(total = sum(n)) %>% mutate(perc_conf = n/total) %>% mutate(perc_conf = round(perc_conf*100, 1)) %>% mutate(category = rep("confidence", 3)) %>% rename(response = coneduc)
+by_nateduc <- gss %>% filter(year != "NA", nateduc != "NA") %>% group_by(year,nateduc) %>% summarise(n_nateduc = n())
+bynateduc_year <- gss %>% filter(year != "NA", nateduc != "NA") %>% group_by(year) %>% select(year, nateduc) %>% summarise(total_confid = n())
+merged_nateduc <- merge(bynateduc_year, by_nateduc) %>% filter(year >= 2000) %>% group_by(nateduc) %>% summarise(n = sum(n_nateduc)) %>% mutate(total = sum(n)) %>% mutate(perc_conf = n/total) %>% mutate(perc_conf = round(perc_conf*100, 1)) %>% mutate(category = rep("spending", 3)) %>% rename(response = nateduc)
+educ_df <-  rbind(merged_coneduc, merged_nateduc)
+educ_df %>% group_by(category) %>% ggplot(aes(y = perc_conf, x = response, fill = response)) + geom_bar(stat = "identity") + ylab("Percent") + xlab("Response") + ggtitle("Confidence and Spending in Education 2000-2012") +  scale_fill_hue(name="Response") + facet_wrap( ~ category) + theme(axis.ticks = element_blank(), axis.text.x = element_blank())
+```
+
+The plot on the right shows the overwhelming percentage of respondents who believe the extreme view that too little money is spent by government for education. More than 70% of the respondents belong to this group. 
+
+In terms of confidence in edcuational institutions, the plot o the left shows the moderates (About Right), or those who are in the middle of the two ends, dominate the extreme views with regard to confidence in educational institutions.  Its dominance is not as marked however.
+
+We will focus our analysis on the relationship between Government spending on education, income, sex, and educational institutions.  The variables we are interested in are:
+
+### Table 1. selected variables
+
+|Variable         |Question                                                                                 |DataType |
+|:----------------|:----------------------------------------------------------------------------------------|:--------|
+|`year`           |GSS year for this respondent                                                             |Numeric  |
+|`coninc`         |Total family income in constant dollars                                                  |Numeric  |
+|`coneduc`        |confidence in educational  institutions                                                  |Factor   |
+|`nateduc`        |spending to improve nation's education system                                            |Factor   |
+|`sex`            |sex                                                                                      |Factor   |
+
+To find out whether confidence in educational institutions is associated with an opinion regarding Government spending for education we will perform a hypothesis test using a chi-squared test of independence. 
+
+###The conditions for the chi-squared test are:
+
+1 Independence - Since random sampling was performed and sampling without replacement was performed, we can assume the requirement for independence is met. Each observation contributes to only one cell in the table.
+
+2 Sample size - Each cell contains more than 5 expected observations as seen below. 
+
+```{r tachi, echo=TRUE}
+data_2000 <-gss %>% filter(year != "NA", nateduc != "NA", coninc != "NA", coneduc != "NA", sex != "NA") %>% filter(year >= 2000) %>% select(coneduc, nateduc, coninc, year, sex)
+table(data_2000$coneduc, data_2000$nateduc)
+```
+This condition is also met.
+
+### Hypothesis test for chi-squared test
+
+null hypothesis: Levels of confidence in educational institutions are independent of opinions on whether enough money is spent on education. 
+
+alternative hypothesis: Levels of Confidence in educational institutions are not independent of opinions on whether enough money is spent on education.
+
+We know perform a chi-squared test using the inference function.
+
+```{r chisq1, echo=TRUE, fig.width=13}
+inference(data = data_2000, y = coneduc, x = nateduc, type = "ht", statistic = "proportion", method = "theoretical", alternative = "greater")
+```
+
+### Conclusion for the Chi-Squared Test
+
+Since our p-value is less than 0.05, we reject the null hypothesis. The data provide convincing evidence that the observed counts are different from the expected counts.
+
+Confidence in educational institutions and opinions whether enough money is spent on education are dependent.
+
+###Research Question 2
+
+Can the difference in opinions regarding spending for education among those with hardly any confidence in educational institutions be explained by differences in income?  Can low or high average income influence the respondents to believe that too much is spent for education? 
+
+```{r quest2, echo=TRUE}
+inc <- data_2000 %>% filter(coneduc == "Hardly Any")
+inc %>% group_by(nateduc) %>%summarise(sum_inc = sum(coninc), mean_inc = mean(coninc), sd_inc = sd(coninc), max_inc = max(coninc), iqr_inc = IQR(coninc), n_inc = n(), median_inc = median(coninc)) 
+```
+
+Looking at the summary statistics we see that, among those who have hardly any confidence in educational institutions, the group Too Little  and the group About Right has mean incomes that are nearly similar. The group Too Much has a higher mean income and is the highest among the groups. 
+
+```{r pltms, echo=FALSE, fig.align='center'}
+plotmeans(coninc~nateduc, connect= 1, col="red", main = "Plot of means with 95% CIs", xlab="levels of confidence", ylab="Total family income in constant dollars", mean.labels = TRUE, ci.label = TRUE, ylim = c(20000, 80000), cex = 0.75, data = inc)
+```
+
+The confidence interval for the point estimates show considerable overlap. Based on the plot it is not easy to tell whether the differences are not due to random difference due to sampling variability.
+
+Since we are dealing with a numeric response variable and a categorical dependent variable with 3 levels, we will use anova or analysis of variance to test our hypothesis. The ANOVA is the preferred approach for our data because it controls for so-called "study-wide error rate". Comparing the different groups with each other will require 3 separate t-tests.  Multiple testing increase the chance of finding a statistically significant finding by chance.
+
+### Hypothesis testing for Anova
+
+Our null hypothesis: The population mean total family income of those with hardly any confidence in educational institutions is the same among those who believe that there is: too little, about right, and too much spending for education. 
+
+Our alternative hypothesis: The population mean total constant family income of those with hardly any confidence in educational institutions is different in at least one group among those who believe that there is: too little, about right, and too much spending for education. 
+
+let us see if the conditions for performing anova are first met.
+
+### Conditions for Anova
+
+1. Independence - Since random sampling without replacement was performed, we can assume the requirement for independence both within and between groups are met.  The data is not paired. 
+2. Approximate normality- distributions should be nearly normal within each group.  
+
+```{r gghistog, echo=TRUE, fig.width=13}
+mean_income <- inc %>% select(coninc, nateduc) %>% group_by(nateduc) %>% summarise(mean_inc = mean(coninc))
+inc %>% ggplot(aes(x = coninc, fill = nateduc)) + geom_histogram(binwidth= 18500, colour = "black", aes(y = ..density..)) + facet_wrap( ~ nateduc) + geom_vline(aes(xintercept = mean_inc), mean_income, colour = "red") + scale_colour_discrete(name="Response", breaks= c("Too Little", "About Right", "Too Much"), labels= c("Too Little", "About Right", "Too Much")) + scale_shape_discrete(name="Response", breaks= c("Too Little", "About Right", "Too Much"), labels= c("Too Little", "About Right", "Too Much")) + scale_fill_hue(name="Response")
+```
+
+We see that constant income seems to have roughly the same right skewed distribution among the different opinions on spending for education. The red line representing the respective means of each category. Our sample size is comparatively adequate to overcome the skewness of the data, except for the group Too Much with only 67 oservations. We will however proceed with the test for the sake of this exercise.
+
+3. Equal variance - Groups should have roughly equal variability. 
+
+```{r bxplt, echo=TRUE}
+inc %>% ggplot(aes(x=nateduc, y=coninc, fill=nateduc)) + geom_boxplot() + ylab("Total family income in constant dollars") + xlab("Response") + ggtitle("Family Income VS Spending for Education") +  scale_fill_hue(name="Response")
+```
+
+Based on the boxplots of the different groups above, this condition is roughly met.
+
+We use the inference function in `statsr` to perform the anova test.
+
+```{r infanov, echo=TRUE}
+inc %>% inference(y = coninc, x = nateduc, statistic = "mean", type = "ht", method = "theoretical", alternative = "greater")
+```
+
+### Conclusion for the Anova Test
+
+The resulting pvalue of our anova test is greater than the 0.05% significance level.  We therefore  fail to reject the null hypothesis. 
+
+Conclusion: The data does not provide convincing evidence that the population mean total family income of those with hardly any of confidence in educational institutions is different among those who believe that there is: too little, about right, and too much spending for education.
+
+It seems that mean total family income is the same among the different groups. The difference in income probably does not influence the respondents belief regarding Government spending for education? 
+
+###Research Question 3
+
+Women tend to do better in school. Could gender be associated with belief regarding Government spending for education? 
+
+Does the proportion of males and females differ in the groups too little and about right with regard to Government spending for education.
+
+```{r sexprop, echo=TRUE}
+gndr <- inc %>% filter(nateduc == "Too Little" | nateduc == "About Right") %>% droplevels() %>% group_by(sex) %>% summarise(count = n()) %>% mutate(total = sum(count), perc = count/total) %>% mutate(perc = round(perc,2))
+gndr
+```
+
+There is slightly greater percentage of females in our data.
+
+```{r condproptest, echo=TRUE}
+tlar <- inc %>% filter(nateduc == "Too Little" | nateduc == "About Right") %>% droplevels() %>% group_by(nateduc) %>% summarise(count = n()) %>% mutate(total = sum(count), perc = count/total) %>% mutate(perc = round(perc,2))
+tlar
+```
+
+Almost 90% of the respondents in our data believe that Government spending for education is too little.  
+
+### Conditions for the difference in proportion
+
+1. Independence 
+
+- within groups: sampled observations must be independent within each group. Since random sampling without replacement was performed and our sample is less tha 10% of the total population, we can assume the requirement for independence are met. 
+
+- between groups: the two groups must be independent of each other (non-paired). This condition is met.
+
+2. Sample size/skew 
+- Whether the distribution of the difference in proportion follows a normal distriution.
+- Each sample should meet the success-failure condition, at least 10 for the data to follow a normal distribution.
+
+`n1p1 is greater than or equal to 10 and n1(1-p1) is greater than or equal to 10`
+
+`n2p2 is greater than or equal to 10 and n2(1-p2) is greater than or equal to 10`
+
+###Checking the Success Failure condition for a confidence interval
+
+```{r sucfail1, echo=TRUE}
+genprop_tl <- inc %>% filter(nateduc == "Too Little") %>% droplevels() %>% group_by(sex) %>% summarise(count = n()) %>% mutate(total = sum(count), perc = count/total) %>% mutate(perc = round(perc, 2))
+genprop_ar <- inc %>% filter(nateduc == "About Right") %>% droplevels() %>% group_by(sex) %>% summarise(count = n()) %>% mutate(total = sum(count), perc = count/total) %>% mutate(perc = round(perc, 2))
+genprop_tl
+genprop_ar
+```
+
+The number of respondents in Too Little group is *`r genprop_tl$total[2]`* and the proportion of females are *`r genprop_tl$perc[2]`*. The number of successes or the number of females are *`r genprop_tl$count[2]`*. The  number of failures or the number of males are *`r genprop_tl$count[1]`*.
+
+The number of respondents in About Right group is *`r genprop_ar$total[2]`* and the proportion of females are *`r genprop_ar$perc[2]`*. The number of successes or the number of females are *`r genprop_ar$count[2]`*. The  number of failures or the number of males are *`r genprop_ar$count[1]`*.
+
+The success failure condition is met.
+
+###Create a 95% confidence interval
+
+```{r confinterv, echo=TRUE}
+confI <- (genprop_tl$perc[2] - genprop_ar$perc[2]) + c(-1,1) * 1.96 * sqrt(((genprop_tl$perc[2]*(1-genprop_tl$perc[2]))/genprop_tl$count[2]) + ((genprop_ar$perc[2]*(1-genprop_ar$perc[2]))/genprop_ar$count[2]))
+```
+
+The proportion of women in the group too little is 53% while on the group about right the proportion is 49%,  a difference of 4%. Our 95% confidence interval for this point estimate is **`r confI`**.  The interval contains the null value of 0, which means that we cannot discount the possiility that there is no difference between the two proportions.
+
+### Hypothesis testing for difference in proportion
+
+null hypothesis: The proportion of females among those who believe that Government spending for education is too little and about right are the same. 
+
+alternative hypothesis: The proportion of females among those who believe that Government spending for education is too little and about right  are not the same.
+
+###Checking the Success Failure condition for a Hypothesis Test
+ 
+When conducting a hypothesis test, we state that in null hypothesis that the two proportions are equal.  We need to use a pooled proportion to state that this is the value to which the two proportions are equal to.
+
+We use our pooled proportion to check whther our success failure conditionns is met
+
+##Pooled proportion
+```{r poolprop, echo=TRUE}
+pooled_prop <- (genprop_tl$count[2] + genprop_ar$count[2])/(genprop_tl$total[2] + genprop_ar$total[2])
+pooled_prop
+```
+
+The number of respondents in the group too little are *`r genprop_tl$total[2]`* and the  pooled proportion *`r pooled_prop`*. The  number of successes are *`r round(genprop_tl$total[2]*pooled_prop,1)`*. The  number of failures are *`r round(genprop_tl$total[2]*(1-pooled_prop),1)`*.
+
+The number of respondents in the group about right are *`r genprop_ar$total[2]`* and the  pooled proportion *`r pooled_prop`*. The  number of successes are *`r round(genprop_ar$total[2]*pooled_prop,1)`*. The  number of failures are *`r round(genprop_ar$total[2]*(1-pooled_prop),1)`*.
+
+The success failure condition is met.  We proceed to perform the difference in proportions test using the inference function.
+
+##Standard Error
+
+```{r SE, echo=TRUE}
+SE <- sqrt(((pooled_prop*(1-pooled_prop))/genprop_tl$count[2]) + ((pooled_prop*(1-pooled_prop))/genprop_ar$count[2]))
+null_v <- 0
+pt_est <- genprop_tl$perc[2] - genprop_ar$perc[2]
+z_score <- (pt_est-0)/SE
+SE
+pt_est
+z_score
+2*pnorm(z_score, lower.tail = FALSE)
+```
+
+
+```{r proptest, echo=TRUE, fig.width=13}
+inc %>% filter(nateduc == "Too Little" | nateduc == "About Right") %>% droplevels() %>% inference(y = sex, x = nateduc, statistic = "proportion", type = "ht",null = 0, method = "theoretical", alternative="twosided",success = "Female")
+```
+
+
+### Conclusion for the difference in proportion
+
+The proportion of women in the group too little is 53% while on the group about right the proportion is 49%,  a difference of 4%. Given that the pvalue of our test for difference in proportion is 0.54 which is greater than the our significance level of 0.05%,  we therefore fail to reject the null hypothesis. 
+
+Conclusion: The data does not provide convincing evidence that the proportion of females among those believe that Government spending for education is too little and about right  are not the same among those who have hardly any confidence in educational institutions. It seems that gender difference is not associated with beliefs regarding Government spending for education.
+
+### Keypoints
+
+- About 15% of the respondents in the GSS survey between the year 2000 and 2012 answered hardly any when asked "would you say you have a great deal of confidence in educational institutions?" 
+
+- The greatest proportion (75%) of those who have hardly any confidence in educational institutions believe that there is too little government spending for education.  
+
+- The belief that there is too little, about right, or too much spending for education among those who hardly have any confidence in educational institutions is not associated with mean family income. The mean family income among the different groups are statistically similar.
+
+- Gender proportion among the group too little and about right are statistically the same. Gender is not associated between choosing whether spending for education is too little or about right. 
+
+```{r sesinfo, echo=TRUE}
+sessionInfo()
+```
